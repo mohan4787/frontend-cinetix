@@ -10,7 +10,7 @@ class BookingService extends BaseService {
   private baseUrl = "/api/bookings";
 
   async getAll(filters?: BookingFilter) {
-    return this.getRequest(this.baseUrl, { params: filters });
+    return this.getRequest(this.baseUrl, { params: filters as Record<string, unknown> });
   }
 
   async getById(id: string) {

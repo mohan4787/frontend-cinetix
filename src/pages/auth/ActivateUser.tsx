@@ -14,10 +14,10 @@ const ActivateUser = () => {
       const token = params.token
       const response = await authSvc.activateUserProfile(token as string) as unknown as SuccessResponse
       toast.success("Account Activatedddd!! please login to aceess website!",{description:response.message});
-      window.location.href = "http://localhost:3000/login"
+      window.location.href = `${import.meta.env.VITE_APP_NEXTJS_URL}/login`;
     } catch (exception:any) {
       toast.error("Account Activated!!",{description:exception?.message})
-      window.location.href = "http://localhost:3000/login"
+      window.location.href = `${import.meta.env.VITE_APP_NEXTJS_URL}/login`;
     }
   }
   useEffect(() => {

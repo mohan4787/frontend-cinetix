@@ -8,7 +8,7 @@ import { CancleButton, SubmitButton } from "../button/FormButton";
 
 export interface IShowTimeFormProps {
   DTO: any;
-  id: string | undefined;
+  id: any;
   showTimeDetail?: IShowTimeCreateData | null;
   submitForm: (data: IShowTimeCreateData) => void;
 }

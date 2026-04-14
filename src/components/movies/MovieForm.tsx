@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 export interface IMovieFormProps {
   DTO: any;
-  movieDetail?: IMovieCreateData | null;
+  movieDetail?: IMovieCreateData | any | null;
   submitForm: (data: IMovieCreateData) => void;
 }
 
