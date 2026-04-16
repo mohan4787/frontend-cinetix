@@ -58,7 +58,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         const userProfileResponse = await authSvc.getLoggedInUserProfile()
         setLoggedInUserProfile(userProfileResponse.data)
     } catch {
-      //
+     
     } finally {
       setLoading(false);
     }
