@@ -15,7 +15,6 @@ const RegisterForm = () => {
   });
   const submitRegisterData = async (data: IRegisterUser) => {
     try {
-      console.log(data)
      const response = await authSvc.registerUser(data)
       toast.success(response.message)
       navigate("/activate")

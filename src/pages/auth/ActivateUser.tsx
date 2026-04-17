@@ -19,11 +19,8 @@ const ActivateUser = () => {
 
     try {
       setLoading(true);
-      console.log("tkn:",otp);
-      
       await authSvc.activateUserProfile(otp);
-      
-      toast.success("Account activated! Redirecting to login...");
+      toast.success("Account activated Successfully! Redirecting to login...");
       setTimeout(() => navigate("/"), 2000);
     } catch (error: any) {
       toast.error(error?.data?.message || "Invalid OTP.");
