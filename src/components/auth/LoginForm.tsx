@@ -29,12 +29,13 @@ const LoginForm = () => {
   const submitForm = async (credentials: ICredentials) => {
     try {
       await authSvc.loginUser(credentials)
-      const userProfileResponse = await authSvc.getLoggedInUserProfile()
+      const userProfileResponse = await authSvc.getLoggedInUserProfile();
       toast.success("Welcome to"+userProfileResponse.data.role+"Panel!")
       setLoggedInUserProfile(userProfileResponse.data)
       navigate("/"+userProfileResponse.data.role)
-    } catch (exception: unknown) {
+    } catch (exception: any) {
       console.error(exception);
+      toast.error(exception.message)
     }
   };
   return (
