@@ -4,7 +4,6 @@ import {
   CalendarOutlined,
   ShoppingCartOutlined,
   LogoutOutlined,
-  ClockCircleOutlined,
   HomeOutlined,
   FileImageOutlined,
 } from "@ant-design/icons";
@@ -36,26 +35,21 @@ export const AdminMenu = [
   },
   {
     key: "4",
-    icon: <ClockCircleOutlined />,
-    label: <NavLink to="/admin/showtime">Showtimes</NavLink>,
-  },
-  {
-    key: "5",
     icon: <CalendarOutlined />,
     label: <NavLink to="/admin/upcomingmovie">Upcoming Movies</NavLink>,
   },
   {
-    key: "6",
+    key: "5",
     icon: <ShoppingCartOutlined />,
     label: <NavLink to="/admin/booking">Bookings</NavLink>,
   },
   {
-    key: "7",
+    key: "6",
     icon: <UserOutlined />,
     label: <NavLink to="/admin/users">Users</NavLink>,
   },
   {
-    key: "8",
+    key: "7",
     icon: <LogoutOutlined />,
     label: <span onClick={handleSidebarLogout} className="block w-full">Logout</span>,
     danger: true, 
