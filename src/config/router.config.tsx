@@ -42,7 +42,7 @@ const routerConfig = createBrowserRouter([
         Component: ForgetPasswordForm,
       },
       {
-        path: "activate/:token",
+        path: "activate",
         Component: ActivateUser,
       },
     ],

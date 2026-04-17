@@ -18,7 +18,7 @@ const RegisterForm = () => {
       console.log(data)
      const response = await authSvc.registerUser(data)
       toast.success(response.message)
-      navigate("/")
+      navigate("/activate")
     } catch (exception: any) {
       if(exception.error) {
         Object.keys(exception.error).map((field) => {

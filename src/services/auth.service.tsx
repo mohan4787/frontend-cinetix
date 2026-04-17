@@ -11,14 +11,11 @@ class AuthService extends BaseService {
       },
     })) as unknown as SuccessResponse;
   }
-  async activateUserProfile(token:string){
-    return await this.getRequest('auth/activate/'+token)
+  async activateUserProfile(token:any){
+    return await this.postRequest('auth/activate/',{token})
   }
   async loginUser(credentials:ICredentials){
-    const response = await this.postRequest("auth/login",credentials) as unknown as SuccessResponse;
-   console.log(response);
-   
-    
+    const response = await this.postRequest("auth/login",credentials) as unknown as SuccessResponse;    
     localStorage.setItem("_at_movieticket", response.data.accessToken);
     localStorage.setItem("_rt_movieticket", response.data.refreshToken);
   }
