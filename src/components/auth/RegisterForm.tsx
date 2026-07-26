@@ -16,8 +16,9 @@ const RegisterForm = () => {
   const submitRegisterData = async (data: IRegisterUser) => {
     try {
      const response = await authSvc.registerUser(data)
+     const email = response.data.email;
       toast.success(response.message)
-      navigate("/activate")
+      navigate(`/activate?email=${encodeURIComponent(email)}`)
     } catch (exception: any) {
       if(exception.error) {
         Object.keys(exception.error).map((field) => {

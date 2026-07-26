@@ -11,8 +11,11 @@ class AuthService extends BaseService {
       },
     })) as unknown as SuccessResponse;
   }
-  async activateUserProfile(token:any){
-    return await this.postRequest('auth/activate/',{token})
+  async activateUserProfile(data: {
+    email: string;
+    activationToken: string;
+  }) {
+    return await this.postRequest("auth/activate", data);
   }
   async loginUser(credentials:ICredentials){
     const response = await this.postRequest("auth/login",credentials) as unknown as SuccessResponse;    
